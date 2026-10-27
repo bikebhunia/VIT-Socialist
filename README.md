@@ -2,6 +2,10 @@
 
 ### Social Network as Service
 
+Jyotirmoy Bhunia (24BCE0679)
+Nishok Kumar SD (24BAI0200)
+Gangadi Venkata Naga Koushik (24BDS0116)
+
 ### STACK:
 - MongoDB
 - NEO4J
@@ -75,3 +79,8 @@ Follow a user:
 curl -X POST http://localhost:9987/api/clientnumber01/users/FOLLOWER_ID/follow -H "Content-Type: application/json" -d '{"target_id": ["TARGET_ID"]}'
 
 Based on the original project by Doron Segal and Evan Netzer.
+
+
+git add README.md
+git commit -m "Add setup notes"
+git push
