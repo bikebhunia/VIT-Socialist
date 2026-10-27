@@ -28,7 +28,12 @@ AA.neo4j = require('neo4j');
 AA.Settings = require('./settings')({env: environment});
 
 //Data Sets
-AA.MongoDB  = AA.Mongo.connect(AA.Settings.MONGODB.URL);
+AA.MongoDB = AA.Mongo.connect(AA.Settings.MONGODB.URL, { useNewUrlParser: true, useUnifiedTopology: true });
+AA.MongoDB.then(function () {
+    console.log('Mongo connected');
+}).catch(function (e) {
+    console.log('Mongo connection error:', e.message);
+});
 AA.NEO4JGraph = new AA.neo4j.GraphDatabase(AA.Settings.NEO4J.URL);
 // AA.NEO4J.getNode
 AA.Validation = require('./adapters/validate');
@@ -42,7 +47,9 @@ AA.server = new AA.Hapi.Server(AA.Settings.PORT, AA.Settings.HOST);
 AA.server.route([
     AA.Routes.external.follow.routes.follow,
     AA.Routes.external.follow.routes.unfollow,
-    AA.Routes.external.follow.routes.check_relationship
+    AA.Routes.external.follow.routes.check_relationship,
+    AA.Routes.external.users.create_user,
+    AA.Routes.external.users.get_user
 ]);
 
 AA.server.start(function() {

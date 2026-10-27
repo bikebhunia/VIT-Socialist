@@ -4,8 +4,8 @@
     "MONGODB": {
         "USER": "root",
         "PASSWORD": "root",
-        "PORT": "27017",
-        "URL": "mongodb://localhost/test"
+        "PORT": "27018",
+        "URL": "mongodb://localhost:27018/test"
     },
     "NEO4J": {
         "URL": "http://localhost:7474",

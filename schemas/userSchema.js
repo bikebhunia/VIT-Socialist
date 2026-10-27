@@ -1,5 +1,6 @@
 var Mongo = require('mongoose');
 var userSchema = Mongo.Schema({
+    client_id   :       String,
     name        :       String,
     username    :       String,
     user_id     :       String,
