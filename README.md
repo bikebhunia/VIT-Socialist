@@ -1,10 +1,10 @@
-## Socialist
+## VIT Socialist
 
 ### Social Network as Service
 
-Jyotirmoy Bhunia (24BCE0679)
-Nishok Kumar SD (24BAI0200)
-Gangadi Venkata Naga Koushik (24BDS0116)
+1. Jyotirmoy Bhunia (24BCE0679)
+2. Nishok Kumar SD (24BAI0200)
+3. Gangadi Venkata Naga Koushik (24BDS0116)
 
 ### STACK:
 - MongoDB
