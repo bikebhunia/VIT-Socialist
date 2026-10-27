@@ -56,3 +56,22 @@
 
 
 ** Doron Segal.
+
+
+## Running on Apple Silicon (tested on macOS)
+
+- Node 12 under Rosetta: run `arch -x86_64 zsh`, then `nvm use 12`
+- Neo4j 3.5: `docker run -d --name neo4j35 --platform linux/amd64 -p 7474:7474 -p 7687:7687 -e NEO4J_AUTH=none neo4j:3.5`
+- MongoDB 4.4: `docker run -d --name mongo44 --platform linux/amd64 -p 27018:27017 mongo:4.4`
+- `npm install`, then `node index.js`
+- `settings/dev.json` points MongoDB at port 27018
+
+## Example requests
+
+Create a user (note the returned user_id):
+curl -X POST http://localhost:9987/api/clientnumber01/users/create -H "Content-Type: application/json" -d '{"username": "asharao", "password": "secret1", "email": "asha@example.com", "phone": 9876543210, "first_name": "Asha", "last_name": "Rao"}'
+
+Follow a user:
+curl -X POST http://localhost:9987/api/clientnumber01/users/FOLLOWER_ID/follow -H "Content-Type: application/json" -d '{"target_id": ["TARGET_ID"]}'
+
+Based on the original project by Doron Segal and Evan Netzer.
